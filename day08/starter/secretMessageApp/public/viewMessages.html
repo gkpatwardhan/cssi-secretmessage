@@ -8,7 +8,7 @@
     <title>Secret Messaging App</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script defer src="/__/firebase/8.3.1/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -36,8 +36,12 @@
             <br>
             </div>
         </div>
-        <section class="container">
-            <h2 id="message" class="subtitle is-4"></h2>
+        <section id="hide" class="hidden container">
+            <div class="card mt-1">
+                <div class="card-content">
+                    <p class="title" id="message"></p>
+                </div>
+            </div>
         </section>
 
     </section>

@@ -1,8 +1,14 @@
+console.log("In view message");
+
 const getMessages = () => {
+    console.log("get messages");
     const messagesRef = firebase.database().ref();
+    
     messagesRef.on('value', (snapshot) => {
-    const data = snapshot.val();
-    findMessage(data);
+        console.log("in ref");
+        const data = snapshot.val();
+        console.log(data);
+        findMessage(data);
     });
 }
 
@@ -10,7 +16,7 @@ const findMessage = (messages) => {
     const passcodeAttempt = document.querySelector('#passcode').value;
     for(message in messages) {
         const messageData = messages[message];
-        if(messageData.passcode === passcodeAttempt) {
+        if(messageData.password === passcodeAttempt) {
             renderMessageAsHtml(messageData.message)
         }
     }
