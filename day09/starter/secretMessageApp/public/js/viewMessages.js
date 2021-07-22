@@ -1,5 +1,7 @@
 console.log("In view message");
 
+var MD5 = new Hashes.MD5;
+
 const getMessages = () => {
     console.log("get messages");
     const messagesRef = firebase.database().ref();
@@ -8,12 +10,13 @@ const getMessages = () => {
         console.log("in ref");
         const data = snapshot.val();
         console.log(data);
-        findMessage(data);
+        findMessage(data)git;
     });
 }
 
 const findMessage = (messages) => {
-    const passcodeAttempt = document.querySelector('#passcode').value;
+    var passcodeAttempt = document.querySelector('#passcode').value;
+    passcodeAttempt = MD5.hex(passcodeAttempt);
     for(message in messages) {
         const messageData = messages[message];
         if(messageData.password === passcodeAttempt) {
