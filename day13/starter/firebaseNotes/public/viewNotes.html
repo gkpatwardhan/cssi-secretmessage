@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-	  <link rel="stylesheet" href="css/cards.css">
+      <link rel="stylesheet" href="css/cards.css">
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/8.3.1/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -32,8 +32,24 @@
             <h1 class="title">Some of Your Greatest Ideas Started Here</h1><br>
           </div>
         </div>
+        <input class="input is-medium mb-3" type="text" placeholder="Seach by label" id="search">
         <div id="app" class="columns is-multiline">
           <!-- Note cards will render here -->
+        </div>
+        <div id="editNoteModal" class="modal">
+        <div class="modal-background"></div>
+            <div class="modal-card">
+                <section class="modal-card-body">
+                    <input class="input is-normal" id="editTitleInput" type="text">
+                    <input class="input is-normal" id="editTextInput" type="text">
+                </section>
+                <footer class="modal-card-foot">
+                    <button id="saveNote" class="button is-success">
+                        Save changes
+                    </button>
+                    <button class="button" onclick="closeEditModal()">Cancel</button>
+                </footer>
+            </div>
         </div>
       </div>
     </div>
